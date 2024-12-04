@@ -9,6 +9,10 @@ public class Disk {
         this.album = album;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Disco{id=" + id + ", álbum='" + album + "'}";

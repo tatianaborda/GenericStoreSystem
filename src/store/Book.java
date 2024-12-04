@@ -9,6 +9,10 @@ public class Book {
         this.title = title;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Libro{id=" + id + ", título='" + title + "'}";
