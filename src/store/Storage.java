@@ -1,31 +1,36 @@
 package store;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Storage<T> {
-    private List<T> items; // Lista interna para almacenar elementos
+public class Storage<K, V> {
+    private Map<K, V> items; // Almacén como un mapa clave-valor
 
     public Storage() {
-        items = new ArrayList<>();
+        items = new HashMap<>();
     }
 
-    // Agregar un elemento al almacén
-    public void addItem(T item) {
-        items.add(item);
+    // Agregar un elemento con clave y valor
+    public void addItem(K key, V value) {
+        items.put(key, value);
     }
 
-    // Eliminar un elemento del almacén
-    public void removeItem(T item) {
-        items.remove(item);
+    // Eliminar un elemento por su clave
+    public void removeItem(K key) {
+        items.remove(key);
     }
 
-    // Obtener todos los elementos
-    public List<T> getItems() {
-        return items;
+    // Obtener un elemento por su clave
+    public V getItem(K key) {
+        return items.get(key);
     }
 
-    // Mostrar todos los elementos
+    // Mostrar todos los elementos del almacén
     public void showAll() {
-        System.out.println("Elementos en el almacén: " + items);
+        System.out.println("Elementos en el almacén: " + items.values());
+    }
+
+    // Obtener el mapa interno (útil para otros métodos)
+    public Map<K, V> getItems() {
+        return items;
     }
 }

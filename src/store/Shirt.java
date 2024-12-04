@@ -9,6 +9,10 @@ public class Shirt {
         this.size = size;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Remera{id=" + id + ", talla='" + size + "'}";
